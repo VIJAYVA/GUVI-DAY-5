@@ -1,0 +1,481 @@
+Do the below programs in anonymous function & IIFE
+a)Print odd numbers in an array
+anonymous function
+
+
+
+var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+  function OddNumber (arr) {
+  let odds = arr.filter(n => n%2)
+    console.log(odds)
+};
+ OddNumber(arr);
+
+//IIFE function 
+
+(()=>{
+  var arr1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+   let odds1 = arr1.filter(n1 => n1%2)
+  console.log(odds1)
+})();
+
+//arrow function 
+
+var arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+var OddNumber=(arr)=>{
+  let odds = arr.filter(n => n%2)
+    console.log(odds)
+};
+   OddNumber(arr);
+
+
+b)Convert all the strings to title caps in a string array
+
+const string = function(){
+function toTitleCase(str){
+str =str.toLowerCase().split(' ');
+for( i=0;i<str.length;i++){
+str[i] = str[i].charAt(0).toUpperCase()+str[i].slice(1);
+   }
+  return str.join(' ');
+}
+console.log(toTitleCase("WELCOME TO GUVI"));
+}
+string();
+
+
+ IIFE function
+
+(()=> {function toTitleCase1(str1){
+ str1 =str1.toLowerCase().split(' ');
+ for( i=0;i<str1.length;i++){
+   str1[i] = str1[i].charAt(0).toUpperCase()+str1[i].slice(1);
+  }
+    return str1.join(' ');
+}
+console.log(toTitleCase1("WELCOME TO GUVI"));
+})();
+
+//arrow function
+const string =()=>{
+function toTitleCase(str){
+  str =str.toLowerCase().split(' ');
+for( i=0;i<str.length;i++){
+ str[i] = str[i].charAt(0).toUpperCase()+str[i].slice(1);
+    }
+  return str.join(' ');
+
+}
+console.log(toTitleCase("WELCOME TO GUVI"));
+ }
+ string();
+
+
+c)Sum of all numbers in an array
+ annonymus function
+var a=[1,2,3,4,5,6,7,8,9,10]
+function Sum(a){
+    var total=0;
+    for(var i in a) { 
+        total += a[i];
+    }
+    console.log(total)
+} 
+
+Sum(a);
+
+
+  IIFE function
+
+(function(){
+        var b=[1,2,3,4,5,6,7,8,9,10]
+        var total1=0;
+        for(var i in b) { 
+            total1 += b[i];
+        }
+
+        console.log(total1);
+    })();
+
+//arrow function
+var c=[1,2,3,4,5,6,7,8,9,10]
+var Sum=(c)=>{
+ var total=0;
+ for(var i in c) { 
+ total += c[i];
+ }
+ console.log(total)
+} 
+Sum(c);
+
+
+d)Return all the prime numbers in an array
+
+
+//anonymous function
+const array = [2,3,4,5,6,7,8,9,10,11]; 
+function isPrime(num) {
+ for (let start = 2; num > start; start++) {
+ if (num % start == 0) {
+return false;
+    }
+
+  }
+
+return num > 1;
+
+}
+console.log(array.filter(isPrime));
+
+// IIFE
+
+(()=>{
+  var arr=[1,2,3,4,5,6,7];
+  numArray =arr.filter((number)=>{
+    for(var i=2;i<=Math.sqrt(number);i++){
+      if(number%i===0)
+      return false;
+    }
+
+    return true;
+    })
+  console.log(numArray)
+})();
+
+
+// arrow function
+const array = [2,3,4,5,6,7,8,9,10,11]; 
+var isPrime = (num)=>{
+for (let start = 2; num > start; start++) {
+ if (num % start == 0) {
+ return false;
+    }
+
+  }
+
+  return num > 1;
+
+}
+console.log(array.filter(
+
+
+
+e)Return all the palindromes in an array
+
+
+//anonymous function
+function palindromeArray(arr){
+    let isPalindrome = true;
+    for(let i = 0; i < arr.length / 2; i++) {
+        if(arr[i] !== arr[arr.length - i - 1]){
+          isPalindrome = false; 
+          break;
+        }
+    }
+
+    return isPalindrome;
+}
+
+console.log(palindromeArray([1,2,2,1]));
+
+
+
+// IIFE
+(()=>{
+let palindromeArrays = (arr1) => {
+let Palindrome = true;
+    for(let i = 0; i < arr1.length / 2; i++) {
+        if(arr1[i] !== arr1[arr1.length - i - 1]){
+          isPalindrome = false; 
+          break;
+        }
+    }
+
+    return Palindrome;
+}
+console.log(palindromeArrays([1,2,2,1]));
+})();
+
+// arrow function
+
+let palindromeArr = (arr1) => {
+
+  let isPalindrome = true;
+  for(let i = 0; i < arr1.length / 2; i++) {
+      if(arr1[i] !== arr1[arr1.length - i - 1]){
+        isPalindrome = false; 
+        break;
+      }
+  }
+
+  return isPalindrome;
+
+}
+console.log(palindromeArray([1,2,2,1]));
+
+
+f)Return median of two sorted arrays of the same size
+
+ //anonymous function
+
+function median(a, b){
+    let c = [...a, ...b].sort((a, b) => a - b);
+    const half = c.length / 2 | 0;
+    if (c.length % 2) 
+    return c[half];
+    return (c[half] + c[half - 1]) / 2;
+}
+const arr1 = [1, 12, 15, 26, 38];
+const arr2 = [2, 13, 17, 30, 45];
+console.log(median(arr1, arr2));
+
+
+// IIFE function
+
+(() => {
+
+const median = (a, b) => {
+ let c = [...a, ...b].sort((a, b) => a - b);
+ const half = c.length / 2 | 0;
+ if (c.length % 2) 
+ return c[half];
+  return (c[half] + c[half - 1]) / 2;
+}
+
+const arr1 = [1, 12, 15, 26, 38];
+const arr2 = [2, 13, 17, 30, 45];
+console.log(median(arr1, arr2));
+})();
+
+
+//arrow function
+var median=(a, b)=>{
+ let c = [...a, ...b].sort((a, b) => a - b);
+ const half = c.length / 2 | 0;
+ if (c.length % 2) 
+ return c[half];
+ return (c[half] + c[half - 1]) / 2;
+}
+const arr3 = [1, 12, 15, 26, 38];
+const arr4 = [2, 13, 17, 30, 45];
+console.log(median(arr3, arr4));
+
+
+g)Remove duplicates from an array
+
+
+ //anonymous function
+function Unique(num) {
+ let duplicate = [...new Set(num)];
+ console.log(duplicate)
+}
+var num = [111,11,11,111,22,222,222];
+Unique(num);
+
+//IIFE function
+(()=>{
+ let num = [1,1,1,2,2,2,3,3,3];
+ let uniqueNum = [...new Set(num)];
+
+console.log(uniqueNum);
+
+})();
+
+//arrow function
+
+var Unique=(num)=>{
+let duplicate = [...new Set(num)];
+console.log(duplicate);
+}
+var num = [111,11,11,111,22,222,222];
+Unique(num);
+
+  
+
+h)Rotate an array by k times
+
+
+
+
+ //anonymous function
+function rotate(num,k){
+let i=0;
+while(i<k){
+num.unshift(num.pop())
+i++;
+}
+return num;
+}
+var num=[1,2,3,4,5,6,7]
+var k=3
+console.log(rotate(num,k));
+
+
+// IIFE function
+(function(){
+var rotate=function(nums,k){
+let i=0;
+while(i<k){
+nums.unshift(nums.pop())
+i++;
+}
+return nums;
+}
+var nums=[1,2,3,4,5,6,7]
+var k=2
+console.log(rotate(nums,k));
+})();
+
+
+// arrow function
+var rotate =(num,k)=>{
+let i=0;
+while(i<k){
+num.unshift(num.pop())
+i++;
+}
+return num;
+}
+var num=[1,2,3,4,5,6,7]
+var k=3
+console.log(rotate(num,k));
+
+
+
+JavaScript Functions — Warmup Pbms
+//Practice sum----------------------
+
+
+
+var num = 5;
+function addFive(num) { 
+    return num+5;
+}
+var result = addFive(num)
+console.log(result);
+//Practice sum----------------------
+var n = "5a";
+function getOpposite(n) {
+    if(n%1!=0){
+        return -1;
+    }
+    if(n>0||n<0){
+    return -Math.abs(n);
+    }else{
+        return -1;
+    }
+}
+var result = getOpposite(n)
+console.log(result)
+
+//Practice sum----------------------
+var min = 5;
+function toSeconds(min) {
+    return min*60
+}
+var secs = toSeconds(min)
+console.log(secs)
+//Practice sum----------------------
+var mystr = "5";
+function toInteger(mystr) {
+    return parseInt(mystr);
+}
+var myint = toInteger(mystr)
+console.log(myint)
+//Practice sum----------------------
+var myint = -3;
+function nextNumber(myint) {
+    return myint+1;
+}
+var myNextint = nextNumber(myint)
+console.log(myNextint)
+//Practice sum----------------------
+var arr = [1, 2, 3];
+function getFirstElement(arr) {
+    return arr[0];
+}
+var data = getFirstElement(arr)
+console.log(data)
+//Practice sum----------------------
+var arr = [1, 2, 3];
+function hourToSeconds(arr) {
+    for (let i = 0; i < arr.length; i++){
+        arr[i] = arr[i] * 3200;
+    }
+    return arr;
+}
+var data = hourToSeconds(arr)
+console.log(data)
+//Practice sum----------------------
+function findPerimeter(num1,num2) {
+    return 2*(num1+num2);}
+var peri = findPerimeter(6,7);
+console.log(peri);
+//Practice sum----------------------
+function lessThan100(num1,num2) {
+    var a=num1+num2;
+    if(a<100){
+        return true;
+    }else{
+        return false;
+    }
+}
+var res = lessThan100(22,15)
+console.log(res);
+//Practice sum----------------------
+function remainder(num1,num2) {
+    return num1%num2;
+}
+var res = remainder(1,3)
+console.log(res)
+//Practice sum----------------------
+function CountAnimals(tur,horse,pigs) {
+return (tur*2+horse*4+pigs*4);
+}
+var legs = CountAnimals(2,3,5)
+console.log(legs)
+
+//Practice sum----------------------
+function frames(num1,num2) {
+    return (num1*num2*60)
+}
+var fps = frames(1,2)
+console.log(fps);
+//Practice sum----------------------
+function divisibleByFive(num1) {
+    if(num1%5==0){
+        return true;
+    }else{
+
+        return false;
+    }
+}
+var divisible = divisibleByFive(-5)
+console.log(divisible);
+//Practice sum----------------------
+function isEven(num){
+    if(num%2==0){
+        return true;
+   }else{
+       return false
+   }
+}
+   var even = isEven(5)
+   console.log(even);
+//Practice sum----------------------
+function areBothOdd(num1, num2){
+    if(num1%2!=0&&num2%2!=0){
+        return true;
+    }else{
+        return false;
+    }
+
+   }
+   var data=areBothOdd(1,3);
+   console.log(data);
+//Practice sum----------------------
+function getFullName(firstName, lastName){
+   return firstName+" "+lastName;
+
+}
+console.log(getFullName("guvi","GEEK"));
